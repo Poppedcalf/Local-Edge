@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# REPLACE with your real domain
+Sitemap: https://poppedcalf.github.io/Local-Edge/sitemap.xml
