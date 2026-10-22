@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.className='js'</script>
+  <title>The Local Edge Journey: An Honest Build Log and Vision | Local Edge</title>
+  <meta name="description" content="How Local Edge is being built, in the open: design decisions, mistakes, lessons and what comes next, plus the longer-term vision. Written by founder Amazing Tembo in Kariba, Zimbabwe.">
+  <link rel="canonical" href="https://poppedcalf.github.io/Local-Edge/journey.html">
+  <meta name="theme-color" content="#071230">
+  <meta name="author" content="Amazing Tembo">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Local Edge">
+  <meta property="og:locale" content="en_ZW">
+  <meta property="og:title" content="The Local Edge Journey: An Honest Build Log and Vision | Local Edge">
+  <meta property="og:description" content="How Local Edge is being built, in the open: design decisions, mistakes, lessons and what comes next, plus the longer-term vision. Written by founder Amazing Tembo in Kariba, Zimbabwe.">
+  <meta property="og:url" content="https://poppedcalf.github.io/Local-Edge/journey.html">
+  <meta property="og:image" content="https://poppedcalf.github.io/Local-Edge/assets/images/og-local-edge.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Local Edge: a stronger digital presence and a clearer path to your next customer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Local Edge Journey: An Honest Build Log and Vision | Local Edge">
+  <meta name="twitter:description" content="How Local Edge is being built, in the open: design decisions, mistakes, lessons and what comes next, plus the longer-term vision. Written by founder Amazing Tembo in Kariba, Zimbabwe.">
+  <meta name="twitter:image" content="https://poppedcalf.github.io/Local-Edge/assets/images/og-local-edge.jpg">
+
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="apple-touch-icon" href="assets/logo-icon.png">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-journey">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-3.2 0-3.6 0-4.8.1-1.3.1-2.1.3-2.9.6a5.9 5.9 0 0 0-2.1 1.4A5.9 5.9 0 0 0 1.8 6.4c-.3.8-.5 1.6-.6 2.9C1.1 10.4 1 10.8 1 12s0 1.6.1 2.8c.1 1.3.3 2.1.6 2.9.3.8.7 1.5 1.4 2.1.6.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6 1.2.1 1.6.1 4.8.1s3.6 0 4.8-.1c1.3-.1 2.1-.3 2.9-.6a5.9 5.9 0 0 0 2.1-1.4c.7-.6 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-2.8s0-3.6-.1-4.8c-.1-1.3-.3-2.1-.6-2.9a5.9 5.9 0 0 0-1.4-2.1A5.9 5.9 0 0 0 19.7 2.9c-.8-.3-1.6-.5-2.9-.6-1.2-.1-1.6-.1-4.8-.1zm0 1.8c3.1 0 3.5 0 4.7.1 1.1.1 1.7.2 2.1.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.3 1 .4 2.1.1 1.2.1 1.6.1 4.7s0 3.5-.1 4.7c-.1 1.1-.2 1.7-.4 2.1-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1 .3-2.1.4-1.2.1-1.6.1-4.7.1s-3.5 0-4.7-.1c-1.1-.1-1.7-.2-2.1-.4a3.5 3.5 0 0 1-1.3-.9 3.5 3.5 0 0 1-.9-1.3c-.2-.4-.3-1-.4-2.1C4 15.5 4 15.1 4 12s0-3.5.1-4.7c.1-1.1.2-1.7.4-2.1.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.3 2.1-.4C8.5 4 8.9 4 12 4z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Local Edge, home">
+        <img src="assets/logo-horizontal.png" alt="Local Edge" width="190" height="41">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+      <nav class="nav-panel" id="navPanel" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="journey.html" aria-current="page">Journey</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn-gold btn-sm nav-cta" href="demo.html">Request a Free Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <span id="top"></span>
+    <section class="page-hero" aria-labelledby="pg-title">
+      <div class="container">
+        <p class="crumbs"><a href="index.html">Home</a> / Journey</p>
+        <h1 id="pg-title">The Local Edge journey</h1>
+        <p class="lead">Local Edge is early. Instead of pretending otherwise, this page keeps an honest record of what has been designed, tested and learned so far, including what went wrong, and where the business is trying to go.</p>
+        <ul class="jump" aria-label="On this page">
+          <li><a href="#founder">Who is building this</a></li>
+          <li><a href="#log">Build log</a></li>
+          <li><a href="#vision">Vision</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--light" id="founder" aria-labelledby="founder-title">
+      <div class="container about">
+        <figure class="about-photo reveal">
+          <img src="assets/images/founder.jpg" alt="Amazing Tembo, founder of Local Edge, seated in front of Local Edge signage" width="900" height="1200" loading="lazy">
+          <figcaption><strong>Amazing Tembo</strong> Founder, Local Edge &middot; Kariba</figcaption>
+        </figure>
+        <div class="about-text reveal">
+          <p class="kicker"><span>01</span> Who is building this</p>
+          <h2 id="founder-title">A practical problem-solver, rooted in Kariba</h2>
+          <p>I live in Kariba, and I started Local Edge because too many good businesses here and across Zimbabwe are hard to find, slow to load on a phone, or hard to contact. Fixing that should not need an agency budget.</p>
+          <p>I run Local Edge on my own. I use AI tools to build quickly, and I check every page by hand on a real phone before it goes live. You deal directly with the person building your site.</p>
+          <p>Local Edge is new, and I do not have a list of past clients to show you. That is why the work here is labelled as concept work, why the first demo is free within clear limits, and why this page exists.</p>
+          <ul class="values"><li>Honest</li><li>Practical</li><li>Personal</li></ul>
+          <div class="socials" aria-label="Social media links">
+            <a href="https://www.facebook.com/profile.php?id=61580444944918" target="_blank" rel="noopener noreferrer" aria-label="Local Edge on Facebook"><svg width="22" height="22"><use href="#i-facebook"/></svg></a>
+            <a href="https://www.instagram.com/itzama_zing" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="22" height="22"><use href="#i-instagram"/></svg></a>
+            <a href="https://www.linkedin.com/in/amazing-tembo-409262381" target="_blank" rel="noopener noreferrer" aria-label="Amazing Tembo on LinkedIn"><svg width="22" height="22"><use href="#i-linkedin"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="log" aria-labelledby="log-title">
+      <div class="container">
+        <div class="sec-head">
+          <p class="kicker"><span>02</span> Build log</p>
+          <h2 id="log-title">What was built, tested and learned</h2>
+          <p class="lead">Entries are listed from first to latest and dated by month, because exact dates were not recorded. Each one says what happened, what was decided and why, and what changed or comes next.</p>
+        </div>
+
+        <figure class="band-fig reveal">
+          <img src="assets/images/photo-build-laptop.webp" alt="A laptop showing code on a dark desk beside a stack of notebooks, with a soft shadow on the wall behind" width="1400" height="788" loading="lazy">
+          <figcaption>Illustrative photograph of a coding setup. It is not Local Edge's workspace or code.</figcaption>
+        </figure>
+
+        <!-- ADDING AN ENTRY LATER: copy one <li class="log-entry"> block, change the number, month and the four texts.
+             Newest entries can go at the bottom of the list. Only record things that actually happened. -->
+        <ol class="log">
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 1</span> October 2026</p>
+            <h3>Refocusing Local Edge on web design for local businesses</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>Local Edge was refocused on AI-assisted website design for businesses in Zimbabwe, starting from Kariba.</dd></div>
+              <div><dt>Decision and why</dt><dd>With no past clients to point to, the main introduction would be a free preview of a homepage rather than claims about results.</dd></div>
+              <div><dt>Next</dt><dd>Build concept websites that can be inspected.</dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 2</span> October 2026</p>
+            <h3>First redesign, and a logo that kept being cropped</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>On the first version of this site the logo files were being cropped and distorted.</dd></div>
+              <div><dt>Decision and why</dt><dd>Logos are now sized by height only, so their proportions are never changed. The navy and yellow colours were taken from the logo itself, so the site and the brand match.</dd></div>
+              <div><dt>Changed</dt><dd>The visual system was rebuilt around the existing logo, which has not been altered.</dd></div>
+            </dl>
+            <figure class="log-fig"><img src="assets/images/build-log-local-edge.webp" alt="Two screenshots of the Local Edge website side by side: version 1 and version 2 of the homepage" width="1200" height="800" loading="lazy"><figcaption>The Local Edge homepage, version 1 and version 2.</figcaption></figure>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 3</span> October 2026</p>
+            <h3>The site that looked broken, and why</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>After the first publish the site looked unstyled. The stylesheet that reached GitHub was cut short, so most of the design was missing.</dd></div>
+              <div><dt>Lesson</dt><dd>After every upload, check the file's size and its last lines, and look at the live page in a private browser tab.</dd></div>
+              <div><dt>Changed</dt><dd>The complete file was uploaded again and the page rendered correctly. Verifying uploads is now part of the routine.</dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 4</span> October 2026</p>
+            <h3>A Home button that did not go home</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>The Home links only nudged the page slightly. They pointed at the sticky header, not the top of the page.</dd></div>
+              <div><dt>Decision and why</dt><dd>Home and &ldquo;back to top&rdquo; links now point to the true top of the page, so they behave the same everywhere.</dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 5</span> October 2026</p>
+            <h3>The first concept: VoltEdge Energy</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>A concept website for a fictional solar and electrical business was built from a written brief and five supplied photographs.</dd></div>
+              <div><dt>Decisions and why</dt><dd>The quote form says plainly that nothing is sent when no form service is connected, because GitHub Pages cannot process forms. Every image was renamed, optimised and given alt text, and the lowest-resolution photos are used only at small sizes. Licences are to be confirmed before publishing any photo.</dd></div>
+              <div><dt>Link</dt><dd><a href="https://poppedcalf.github.io/voltedge-demo/" target="_blank" rel="noopener noreferrer">View the VoltEdge concept</a> &middot; <a href="work.html#voltedge">Read the thinking behind it</a></dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 6</span> October 2026</p>
+            <h3>Portfolio cards that show the site</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>The first portfolio card was a plain colour block. It was replaced with a preview picture of the concept.</dd></div>
+              <div><dt>Decision and why</dt><dd>A visitor should be able to see what they will get before tapping, so every project now needs a real preview image.</dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 7</span> October 2026</p>
+            <h3>Version 2, and removing claims that could not be backed up</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>The site gained a Journal, concept cards, packages and a contact form. The first draft of two article titles used a percentage and a price comparison that could not be supported.</dd></div>
+              <div><dt>Decision and why</dt><dd>Those titles were reworded. A business that asks customers to trust it should not publish numbers it cannot source.</dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 8</span> October 2026</p>
+            <h3>Two more concepts: Samanyanga Resort and In Tents Outfitters</h3>
+            <dl class="log-dl">
+              <div><dt>What happened</dt><dd>A lakeside accommodation concept and a mobile camp-hire concept were added to the work. Both hand an enquiry to a pre-filled WhatsApp message rather than a booking system.</dd></div>
+              <div><dt>Why it matters</dt><dd>It shows what a Hospitality Website can do without a reservation platform, and where a separate assessment would be needed.</dd></div>
+              <div><dt>Next</dt><dd>A final polish pass on the concepts and full-size preview images for each. <a href="work.html">See the work</a>.</dd></div>
+            </dl>
+          </li>
+
+          <li class="log-entry">
+            <p class="log-meta"><span class="log-n">Entry 9</span> October 2026</p>
+            <h3>Version 4: clearer offers, a published standard and sourced insights</h3>
+            <dl class="log-dl">
+              <div><dt>What changed</dt><dd>Packages were restated at their base prices with clear scope, monthly care plans were separated out, a quality standard was published, the Insights section gained sourced facts with dates and limits, and a free-demo path with explicit limits was added.</dd></div>
+              <div><dt>Decision and why</dt><dd>Base prices stay stable. Any introductory discount is shown openly next to the standard price, so a discount never quietly becomes the real price.</dd></div>
+              <div><dt>Next</dt><dd>A first real client project, and collecting feedback with permission. Nothing is claimed about results until there are real ones.</dd></div>
+            </dl>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--navy" id="vision" aria-labelledby="vision-title">
+      <div class="container">
+        <div class="sec-head">
+          <p class="kicker"><span>03</span> Vision</p>
+          <h2 id="vision-title">Ambitious, but grounded</h2>
+        </div>
+        <div class="vision-grid">
+          <div class="vision-main reveal">
+            <p>The ambition is to help businesses make better use of digital tools and communicate their value more effectively, and to build Local Edge into a sustainable business that grows through useful work, continuous learning and strong client relationships.</p>
+            <p>It starts in tourism and hospitality around Kariba because that is the market being pursued now. It is not meant to stay there. The same questions apply to any business that needs to be understood, trusted and contacted.</p>
+          </div>
+          <div class="vision-steps reveal">
+            <h3>What comes next</h3>
+            <ul class="list-check">
+              <li>More concept work, each one labelled and explained</li>
+              <li>The first commissioned client project</li>
+              <li>Feedback from clients, published only with permission</li>
+              <li>More sourced articles and facts in Insights</li>
+              <li>Notes from the build log turned into articles</li>
+            </ul>
+            <p class="fine">These are intentions, not promises of dates.</p>
+          </div>
+        </div>
+        <p class="after-grid"><a class="btn btn-gold" href="demo.html">Request a Free Demo</a> &nbsp; <a class="btn btn-ghost" href="contact.html">Discuss a Project</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-horizontal.png" alt="Local Edge" width="170" height="37" loading="lazy">
+        <p>Thoughtful websites that help businesses explain their value and make it easier to enquire.</p>
+        <p class="small"><svg width="14" height="14" aria-hidden="true"><use href="#i-pin"/></svg> Based in Kariba, Zimbabwe. Working with businesses locally and beyond.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <p class="foot-h">Explore</p>
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; pricing</a></li>
+          <li><a href="services.html#care">Website care</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="standard.html">The Local Edge Standard</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="journey.html">Journey</a></li>
+          <li><a href="demo.html">Free demo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="foot-h">Talk to me</p>
+        <ul class="foot-contact">
+          <li><a href="https://wa.me/263784871124?text=Hi%20Amazing%2C%20I&#x27;d%20like%20to%20ask%20about%20a%20website" target="_blank" rel="noopener noreferrer">WhatsApp +263 78 487 1124</a></li>
+          <li><a href="tel:+263784871124">Call +263 78 487 1124</a></li>
+          <li><a href="mailto:atlocaledge@gmail.com">atlocaledge@gmail.com</a></li>
+        </ul>
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.facebook.com/profile.php?id=61580444944918" target="_blank" rel="noopener noreferrer" aria-label="Local Edge on Facebook"><svg width="22" height="22"><use href="#i-facebook"/></svg></a>
+          <a href="https://www.instagram.com/itzama_zing" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="22" height="22"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.linkedin.com/in/amazing-tembo-409262381" target="_blank" rel="noopener noreferrer" aria-label="Amazing Tembo on LinkedIn"><svg width="22" height="22"><use href="#i-linkedin"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; <span id="year">2026</span> Local Edge. Concept projects shown on this site are independent demonstrations, not commissioned client work.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa-float href="https://wa.me/263784871124?text=Hi%20Amazing%2C%20I&#x27;d%20like%20to%20ask%20about%20a%20website" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
