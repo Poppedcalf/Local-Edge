@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Update this line if you move to a custom domain
-Sitemap: https://poppedcalf.github.io/Local-Edge/sitemap.xml
