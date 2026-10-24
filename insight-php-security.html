@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.className='js'</script>
+  <title>Critical PHP Vulnerabilities: What Small Business Website Owners Should Know | Local Edge</title>
+  <meta name="description" content="Two critical PHP vulnerabilities triggered an urgent patching effort in October 2026. What small business website owners should ask their hosting provider.">
+  <link rel="canonical" href="https://local-edge.localedge.workers.dev/insight-php-security.html">
+  <meta name="theme-color" content="#071230">
+  <meta name="author" content="Amazing Tembo">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Local Edge">
+  <meta property="og:locale" content="en_ZW">
+  <meta property="og:title" content="Critical PHP Vulnerabilities: What Small Business Website Owners Should Know | Local Edge">
+  <meta property="og:description" content="Two critical PHP vulnerabilities triggered an urgent patching effort in October 2026. What small business website owners should ask their hosting provider.">
+  <meta property="og:url" content="https://local-edge.localedge.workers.dev/insight-php-security.html">
+  <meta property="og:image" content="https://local-edge.localedge.workers.dev/assets/images/og-php-security.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Local Edge: a stronger digital presence and a clearer path to your next customer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Critical PHP Vulnerabilities: What Small Business Website Owners Should Know | Local Edge">
+  <meta name="twitter:description" content="Two critical PHP vulnerabilities triggered an urgent patching effort in October 2026. What small business website owners should ask their hosting provider.">
+  <meta name="twitter:image" content="https://local-edge.localedge.workers.dev/assets/images/og-php-security.jpg">
+
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="apple-touch-icon" href="assets/logo-icon.png">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-insights">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-3.2 0-3.6 0-4.8.1-1.3.1-2.1.3-2.9.6a5.9 5.9 0 0 0-2.1 1.4A5.9 5.9 0 0 0 1.8 6.4c-.3.8-.5 1.6-.6 2.9C1.1 10.4 1 10.8 1 12s0 1.6.1 2.8c.1 1.3.3 2.1.6 2.9.3.8.7 1.5 1.4 2.1.6.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6 1.2.1 1.6.1 4.8.1s3.6 0 4.8-.1c1.3-.1 2.1-.3 2.9-.6a5.9 5.9 0 0 0 2.1-1.4c.7-.6 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-2.8s0-3.6-.1-4.8c-.1-1.3-.3-2.1-.6-2.9a5.9 5.9 0 0 0-1.4-2.1A5.9 5.9 0 0 0 19.7 2.9c-.8-.3-1.6-.5-2.9-.6-1.2-.1-1.6-.1-4.8-.1zm0 1.8c3.1 0 3.5 0 4.7.1 1.1.1 1.7.2 2.1.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.3 1 .4 2.1.1 1.2.1 1.6.1 4.7s0 3.5-.1 4.7c-.1 1.1-.2 1.7-.4 2.1-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1 .3-2.1.4-1.2.1-1.6.1-4.7.1s-3.5 0-4.7-.1c-1.1-.1-1.7-.2-2.1-.4a3.5 3.5 0 0 1-1.3-.9 3.5 3.5 0 0 1-.9-1.3c-.2-.4-.3-1-.4-2.1C4 15.5 4 15.1 4 12s0-3.5.1-4.7c.1-1.1.2-1.7.4-2.1.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.3 2.1-.4C8.5 4 8.9 4 12 4z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.6V9h3.5v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Local Edge, home">
+        <img src="assets/logo-horizontal.png" alt="Local Edge" width="190" height="41">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+      <nav class="nav-panel" id="navPanel" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="insights.html" aria-current="page">Insights</a></li>
+          <li><a href="journey.html">Journey</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn-gold btn-sm nav-cta" href="demo.html">Request a Free Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <span id="top"></span>
+    <div class="read-progress" aria-hidden="true"><span data-progress-bar></span></div>
+    <article class="article">
+      <header class="article-head article-head--security">
+        <div class="container narrow">
+          <p class="crumbs"><a href="index.html">Home</a> / <a href="insights.html">Insights</a> / Digital safety</p>
+          <p class="post-meta"><span class="cat">Digital safety</span> <span class="cat cat--alert">Security update</span></p>
+          <h1>Critical PHP Vulnerabilities: What Small Business Website Owners Should Know</h1>
+          <p class="deck">Two serious flaws in PHP triggered an urgent patching effort in October 2026. Here is what the discovery does—and does not—mean for a small business website owner.</p>
+          <p class="byline">By Amazing Tembo &middot; Published 24 October 2026 &middot; 6 min read</p>
+          <div class="share" aria-label="Share this article">
+            <button type="button" class="chip" data-copy-link><svg width="16" height="16" aria-hidden="true"><use href="#i-link"/></svg> <span>Copy link</span></button>
+            <a class="chip" href="https://wa.me/?text=Critical%20PHP%20Vulnerabilities%3A%20What%20Small%20Business%20Website%20Owners%20Should%20Know%20https%3A%2F%2Flocal-edge.localedge.workers.dev%2Finsight-php-security.html" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" aria-hidden="true"><use href="#i-whatsapp"/></svg> Share on WhatsApp</a>
+          </div>
+        </div>
+      </header>
+      <div class="container article-layout">
+        <aside class="toc" aria-label="Contents"><p class="toc-h">In this article</p><ol>
+          <li><a href="#what-happened">What happened?</a></li><li><a href="#who-affected">Who may be affected?</a></li><li><a href="#what-to-do">What should an owner do?</a></li><li><a href="#what-not-mean">What this does not mean</a></li><li><a href="#checklist">A practical checklist</a></li><li><a href="#sources">Sources</a></li>
+        </ol></aside>
+        <div class="prose">
+          <figure class="article-hero-art"><img src="assets/images/insight-php-security.svg" alt="Original illustration of a shield and software code, representing security updates." width="1200" height="750"><figcaption>Illustration by Local Edge. It is not a screenshot of a breached system.</figcaption></figure>
+          <p><strong>Updated: 24 October 2026.</strong> This is a plain-language explainer, not a technical incident response guide. Security details can change as maintainers publish further advisories.</p>
+          <div class="fact--inline"><strong>The key point:</strong> PHP's maintainers released fixes on 21 October for two critical vulnerabilities that could permit unauthenticated remote code execution in affected PHP installations. Website owners using PHP should confirm that their host has applied the correct fix. The report is about serious vulnerabilities and emergency patching; it is not proof that every website was breached.</div>
+
+          <h2 id="what-happened">What happened?</h2>
+          <p>On 21 October 2026, the PHP project announced fixes for two critical vulnerabilities, <code>CVE-2026-109618</code> and <code>CVE-2026-109619</code>. The official advisory says the flaws could allow an attacker to execute code remotely without authentication in affected PHP installations. The project rated both issues as critical and urged users to update.</p>
+          <p>OpenAI reported that the vulnerabilities were found as part of a coordinated security effort involving researchers and security providers, with AI helping identify a flaw. The PHP maintainers led the fixes. The important lesson is not that AI alone is a security solution; it is that discovering a flaw only helps if maintainers, hosting providers and site operators can validate and deploy a fix.</p>
+          <p>The Associated Press reported an urgent patching response from governments and businesses. Reuters separately reported that South Africa's presidency temporarily took its website offline as a precaution, while officials said there was no indication of a security breach. That distinction matters: taking a site offline to patch it is not, by itself, evidence that it was hacked.</p>
+
+          <h2 id="who-affected">Who may be affected?</h2>
+          <p>The issue affects PHP installations that serve web requests. PHP runs on many websites and web applications, including common content-management platforms such as WordPress, Drupal and Joomla. But the specific risk depends on the PHP runtime and version installed by the site's hosting provider or server administrator.</p>
+          <p>The official PHP advisory lists patched releases <strong>8.5.12, 8.4.27, 8.3.36 and 8.2.35</strong>. PHP's version numbers and supported branches matter, so do not assume that installing a WordPress theme update or a plugin update automatically updated the server's PHP runtime.</p>
+          <div class="illus"><p class="illus-tag">A useful distinction</p><div class="ba"><div class="ba-col ba-before"><p class="ba-h">A PHP-powered site</p><p>May need a PHP runtime or hosting-package update. The owner should confirm the host has applied the relevant security fix.</p></div><div class="ba-col ba-after"><p class="ba-h">A static HTML site</p><p>Plain HTML, CSS and JavaScript files do not execute PHP on the web server. Other platform, account, dependency and configuration risks still exist.</p></div></div></div>
+          <p>For example, the current Local Edge site is a static HTML/CSS/JavaScript site served by Cloudflare Worker infrastructure, based on the files in this project. That does not make every part of a website or account immune to security problems; it means this particular PHP runtime advisory is not directly describing the site's page files.</p>
+
+          <h2 id="what-to-do">What should a small business owner do?</h2>
+          <p>Most business owners do not manage PHP directly. Your first move is to contact the hosting provider, web administrator or maintenance supplier, and ask a short, specific question.</p>
+          <blockquote>“Does my website run PHP? If so, have you confirmed that the affected PHP installation is patched for CVE-2026-109618 and CVE-2026-109619? Please confirm the runtime version or the vendor's fixed package.”</blockquote>
+          <p>If you manage the server yourself, follow the official PHP or operating-system vendor guidance. Back up the site and database first, apply the vendor-supported update, test critical pages and forms, and verify that the deployed runtime is the one you intended. Do not copy server configuration changes from a social media post without understanding the environment.</p>
+          <p>The PHP project also published additional guidance on 23 October for an unusual configuration related to session upload progress. That advisory is specific and technical; for most site owners, the appropriate route is to ask their host to confirm their exposure and mitigation rather than change server settings on their own.</p>
+
+          <h2 id="what-not-mean">What this does not mean</h2>
+          <ul>
+            <li>It does not mean every website was compromised.</li>
+            <li>It does not mean every website uses PHP.</li>
+            <li>It does not mean a site displaying a warning has definitely been breached.</li>
+            <li>It does not mean a web designer can guarantee security simply by changing a visual design.</li>
+          </ul>
+          <p>A website's appearance and the security of its underlying hosting stack are different things. Good website care includes clear ownership, supported software, timely updates, sensible account access, secure backups and a plan for handling problems.</p>
+
+          <h2 id="checklist">A practical checklist</h2>
+          <ul class="list-check">
+            <li>Know who controls your domain, hosting and website platform.</li>
+            <li>Ask your host which server-side software and PHP version your site uses, if any.</li>
+            <li>Confirm that critical security updates have been applied by the responsible administrator.</li>
+            <li>Keep the content-management system, themes, plugins and other dependencies updated.</li>
+            <li>Use unique passwords and multi-factor authentication for hosting and administrator accounts.</li>
+            <li>Keep backups and test that you can restore them.</li>
+            <li>Test contact forms, booking enquiries and other important paths after maintenance.</li>
+          </ul>
+          <p>For a small hospitality or service business, the practical goal is not to become a security engineer. It is to know who is responsible for maintenance, receive a clear answer when a serious vulnerability is announced, and make sure updates are not silently neglected.</p>
+          <p class="cta-inline"><strong>Do you know who maintains your website?</strong><br>Local Edge's website-care options cover agreed small updates and routine checks of important links and contact paths. They are not a substitute for specialist server security or incident response.</p>
+          <p><a class="btn btn-gold" href="services.html#care">See website care options</a> <a class="btn btn-outline-navy" href="contact.html">Ask a question</a></p>
+
+          <h2 id="sources">Sources</h2>
+          <ol class="sources">
+            <li>PHP project, <a href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener noreferrer">Security advisory: Critical remote code execution vulnerabilities, update now</a> (21 October 2026), including the patched releases and follow-up notes.</li>
+            <li>OpenAI, <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" target="_blank" rel="noopener noreferrer">Patch the Planet: global response coordination as agents uncover critical vulnerabilities</a> (21 October 2026).</li>
+            <li>Associated Press, <a href="https://apnews.com/article/php-websites-fbi-europe-vulnerability-a0af9576808a0963efca8df14d4b5183" target="_blank" rel="noopener noreferrer">Rush is on to patch a software vulnerability that could impact 70% of websites worldwide</a> (October 2026).</li>
+            <li>Reuters, <a href="https://www.reuters.com/world/africa/south-african-presidency-website-temporarily-offline-after-php-warning-2026-10-23/" target="_blank" rel="noopener noreferrer">South African presidency website temporarily offline after PHP warning</a> (23 October 2026).</li>
+          </ol>
+          <p class="fine">This article summarises public advisories for general awareness. It is not a substitute for guidance from your hosting provider, system administrator or a qualified security professional.</p>
+        </div>
+      </div>
+    </article>
+
+
+
+    <section class="section section--paper" aria-labelledby="rel-title">
+      <div class="container"><h2 id="rel-title" class="rel-h">Keep reading</h2><div class="post-grid post-grid--2">
+        <article class="post-card"><a class="post-img" href="insight-enquiry-improvements.html" tabindex="-1" aria-hidden="true"><img src="assets/images/insight-mobile-enquiry.webp" alt="" width="1200" height="750" loading="lazy"></a><p class="post-meta"><span class="cat">Enquiries</span> &middot; 6 min read</p><h3><a href="insight-enquiry-improvements.html">Five Website Improvements That Can Make It Easier to Enquire</a></h3><p>Practical ways to reduce friction between interest and a real conversation.</p></article>
+        <article class="post-card"><a class="post-img" href="insight-lodge-website-questions.html" tabindex="-1" aria-hidden="true"><img src="assets/images/insight-hospitality-website.webp" alt="" width="1200" height="750" loading="lazy"></a><p class="post-meta"><span class="cat">Hospitality</span> &middot; 7 min read</p><h3><a href="insight-lodge-website-questions.html">Does Your Lodge Need a Website? Five Questions to Ask First</a></h3><p>A balanced way to review your online presence before investing.</p></article>
+      </div></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-horizontal.png" alt="Local Edge" width="170" height="37" loading="lazy">
+        <p>Thoughtful websites that help businesses explain their value and make it easier to enquire.</p>
+        <p class="small"><svg width="14" height="14" aria-hidden="true"><use href="#i-pin"/></svg> Based in Kariba, Zimbabwe. Working with businesses locally and beyond.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <p class="foot-h">Explore</p>
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services &amp; pricing</a></li>
+          <li><a href="services.html#care">Website care</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="standard.html">The Local Edge Standard</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="journey.html">Journey</a></li>
+          <li><a href="demo.html">Free demo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="foot-h">Talk to me</p>
+        <ul class="foot-contact">
+          <li><a href="https://wa.me/263784871124?text=Hello%20Local%20Edge%2C%20I&#x27;d%20like%20to%20ask%20about%20a%20website" target="_blank" rel="noopener noreferrer">WhatsApp +263 78 487 1124</a></li>
+          <li><a href="tel:+263784871124">Call +263 78 487 1124</a></li>
+          <li><a href="mailto:atlocaledge@gmail.com">atlocaledge@gmail.com</a></li>
+        </ul>
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.facebook.com/profile.php?id=61580444944918" target="_blank" rel="noopener noreferrer" aria-label="Local Edge on Facebook"><svg width="22" height="22"><use href="#i-facebook"/></svg></a>
+          <a href="https://www.instagram.com/itzama_zing" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="22" height="22"><use href="#i-instagram"/></svg></a>
+          <a href="https://www.linkedin.com/in/amazing-tembo-409262381" target="_blank" rel="noopener noreferrer" aria-label="Amazing Tembo on LinkedIn"><svg width="22" height="22"><use href="#i-linkedin"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; <span id="year">2026</span> Local Edge. Concept projects shown on this site are independent demonstrations, not commissioned client work.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa-float href="https://wa.me/263784871124?text=Hello%20Local%20Edge%2C%20I&#x27;d%20like%20to%20ask%20about%20a%20website" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

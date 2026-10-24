@@ -162,23 +162,6 @@
     });
   });
 
-  // Portfolio previews: use a real screenshot as soon as the image file exists in assets/images/
-  $$('[data-preview]').forEach(function (card) {
-    var frame = $('.frame--pending', card);
-    if (!frame) return;
-    var probe = new Image();
-    probe.onload = function () {
-      var img = document.createElement('img');
-      img.src = card.getAttribute('data-preview');
-      img.alt = card.getAttribute('data-preview-alt') || '';
-      img.width = 1440; img.height = 960; img.loading = 'lazy';
-      frame.textContent = '';
-      frame.appendChild(img);
-      frame.classList.remove('frame--pending');
-    };
-    probe.src = card.getAttribute('data-preview');
-  });
-
   /* ================= 3. FILTERS (work and insights) ================= */
 
   $$('[data-filter-group]').forEach(function (group) {
@@ -406,13 +389,15 @@
     var showFallback = function (lead) {
       var rows = collect();
       var intro = form.getAttribute('data-wa-intro') || 'Enquiry';
-      var text = 'Hi Amazing, this is a ' + intro.toLowerCase() + ' from the Local Edge website.\n\n' + rows.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n');
+      var text = 'Hello Local Edge, I would like to share the following ' + intro.toLowerCase() + '.\n\n' +
+        rows.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n') +
+        '\n\nPlease let me know if you need any more information.';
       var wa = 'https://wa.me/' + (contact.whatsapp || '') + '?text=' + encodeURIComponent(text);
       var mail = 'mailto:' + (contact.email || '') + '?subject=' + encodeURIComponent(form.getAttribute('data-subject') || intro) + '&body=' + encodeURIComponent(text);
       statusEl.className = 'form-status is-fallback';
       statusEl.textContent = '';
       statusEl.appendChild(node('p', 'st-lead', lead));
-      statusEl.appendChild(node('p', '', 'Nothing has been stored or sent yet. Choose how you would like to send your details:'));
+      statusEl.appendChild(node('p', '', 'Your message is prepared, but it has not been sent or saved. Choose WhatsApp or email, then press Send in that app. You can also copy the message and send it another way.'));
       var row = node('div', 'st-actions', '');
       var a1 = node('a', 'btn btn-whatsapp btn-sm', 'Send on WhatsApp'); a1.href = wa; a1.target = '_blank'; a1.rel = 'noopener noreferrer';
       var a2 = node('a', 'btn btn-outline-navy btn-sm', 'Send by email'); a2.href = mail;
@@ -441,7 +426,7 @@
       var hp = form.elements._gotcha; if (hp && hp.value) return;   // honeypot
 
       if (!endpoint) {
-        showFallback('Thank you. Your details are ready to send.');
+        showFallback('Your details are ready. One final step is needed to send them.');
         return;
       }
 
@@ -461,7 +446,7 @@
             ? 'Thank you. Your feedback has been sent. It stays private unless you gave permission to publish it.'
             : 'Thank you. Your request has been sent to Local Edge. I will reply by the method you chose.';
         })
-        .catch(function () { showFallback('Sorry, the form could not be sent just now.'); statusEl.className = 'form-status bad is-fallback'; })
+        .catch(function () { showFallback('Automatic delivery failed. You can still send your details using one of the options below.'); statusEl.className = 'form-status bad is-fallback'; })
         .then(function () { submit.disabled = false; });
     });
   }

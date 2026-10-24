@@ -1,8 +1,18 @@
-# Local Edge website, version 4
+# Local Edge website, version 5 — sales-readiness and usability pass
 
-A plain static site: HTML, one stylesheet, one script and one settings file. No build step, no framework. It works on GitHub Pages as it is.
+A plain static site: HTML, one stylesheet, one script and one settings file. No build step, no framework. Version 5 tightens the first-impression copy, makes portfolio covers explicit, removes the unfinished-topic list, and fixes a few routing and maintainability issues. The WhatsApp/email handoff remains the no-cost default for all three forms.
 
-Live address (current): https://poppedcalf.github.io/Local-Edge/
+Live address (current): https://local-edge.localedge.workers.dev/
+
+## Version 5 improvements
+
+- The homepage explains its current tourism, hospitality and service-business focus sooner, while remaining open to other business types.
+- The repeated “why Local Edge” section is shorter and more specific.
+- Samanyanga Resort and In Tents Outfitters now have lightweight illustrated cover artwork while their true website screenshots are unavailable. Each cover is labelled as illustrative artwork, not a screenshot. The link still opens the live concept. Replace these covers with authorised screenshots when available.
+- Portfolio images are rendered directly in HTML instead of depending on JavaScript to inject them.
+- The Insights page no longer displays a public list of unfinished article ideas; readers can suggest a topic instead.
+- The 404 page no longer forces all relative links to the current GitHub Pages base URL or advertises itself as canonical.
+- The forms use clear WhatsApp/email handoff wording. With blank form endpoints, no details are automatically sent or stored; the visitor must press Send in their messaging app.
 
 ---
 
@@ -13,7 +23,7 @@ index.html            Home
 services.html         Services, pricing, service-fit finder, care plans, terms, pricing FAQ
 standard.html         The Local Edge Standard
 work.html             Filterable work (concept demonstrations, clearly labelled)
-insights.html         Articles list, Digital Facts, planned topics
+insights.html         Articles list, Digital Facts, topic-suggestion CTA
 insight-*.html        Three full articles (lodge questions, enquiry improvements, WhatsApp/social/website)
 journey.html          Founder, honest build log, vision
 demo.html             Free demo request (with honest limits)
@@ -24,7 +34,7 @@ script.js             All behaviour (menu, filters, finder, forms, reading tools
 site-config.js        THE FILE YOU EDIT: contact, form endpoints, prices, care plans, offer, reviews
 robots.txt, sitemap.xml
 assets/logo-*.png     Your logo files, unchanged
-assets/images/        Photos and illustrations (see section 6)
+assets/images/        Photos, illustrations and clearly labelled portfolio cover artwork (see section 6)
 ```
 
 All links are relative, so the site works in a project folder (`/Local-Edge/`) and on a custom domain.
@@ -87,7 +97,7 @@ If a page looks unstyled, `styles.css` did not upload completely. Upload it agai
 ## 5. Honest testing report
 
 ### Checked here, in a local copy (Chromium, simulated phone and desktop widths)
-- All 12 pages: every internal link and every `#anchor` resolves, no duplicate ids, every image exists and has width, height and alt text, every page has a title, description and canonical address, no leftover template tokens.
+- All 12 pages: every internal link and every `#anchor` resolves, no duplicate ids, every image exists and has width, height and alt text, every normal page has a title, description and canonical address (the noindex 404 page intentionally has no canonical), no leftover template tokens.
 - No horizontal scrolling at 320, 390, 768 and 1440 px wide, on all pages (768 on the main pages).
 - Mobile menu: opens, closes with the button, the Escape key and the dark backdrop. Without JavaScript the links show in the header instead.
 - Work filters, including the "Client projects" empty state, which says plainly that there are none yet.
@@ -120,18 +130,15 @@ If a page looks unstyled, `styles.css` did not upload completely. Upload it agai
 | `assets/images/founder.jpg` | Founder portrait | 900x1200 | Journey | Your supplied image, resized only. See note 8c. |
 | `assets/images/portfolio-voltedge.webp` | Screenshot of the VoltEdge source | 1440x960 | Home, Work | |
 | `assets/images/portfolio-local-edge.webp` | Screenshot of this site's home page | 1440x960 | Work | Taken with fallback fonts. Retake after launch if you like. |
-| `assets/images/portfolio-samanyanga-cover.svg`, `portfolio-in-tents-cover.svg` | Cover cards drawn for this site | 1440x960 | Home, Work | Illustrative cards, labelled as "not a screenshot". Replace with real screenshots if you like (same place, same size). |
-| `assets/images/hero-savanna.webp` | Photograph: trees at sunrise or sunset | 1280x640 | Home hero background, 404 | Supplied by you. Heavily compressed (about 43 KB) because it sits under a dark overlay. Licence to confirm. |
-| `assets/images/photo-hospitality.webp` | Photograph: infinity pool above wooded hills | 800x600 | Home ("Who it is for"), lodge article | Supplied by you. Captioned as illustrative, not a client. Licence to confirm. |
-| `assets/images/photo-town.webp` | Photograph: city buildings and trees | 800x600 | Home ("Who it is for") | Supplied by you. Described neutrally in the alt text because the place is not named. Licence to confirm. |
-| `assets/images/photo-build-laptop.webp` | Photograph: laptop with code on a dark desk | 1400x788 | Journey (build log) | Supplied by you. Captioned "not Local Edge's workspace or code". Licence to confirm. |
-| `assets/images/photo-code-detail.webp` | Photograph: close-up of code | 900x600 | The Standard (decorative) | Supplied by you. Decorative, so it has empty alt text. Licence to confirm. |
+| `assets/images/portfolio-samanyanga.webp` | NOT PROVIDED | 1440x960 | Home, Work | See below. |
+| `assets/images/portfolio-in-tents.webp` | NOT PROVIDED | 1440x960 | Home, Work | See below. |
+| `assets/images/insight-*.webp` (3) | Illustrations made for the articles | 1200x750 | Insights cards, articles | Drawn for this site, not photographs. |
+| `assets/images/build-log-local-edge.webp` | Version 1 and 2 screenshots | 1200x800 | Journey | |
+| `assets/images/og-local-edge.jpg` | Social-share picture | 1200x630 | Link previews | Shows the new tagline. |
 
-**Photographs you supplied but I did not use, and why.** The desk with the three wall posters, the orange-lit code dashboard, the two Webflow template desks (the "Andora" site and the "Norway" template, with a Starbucks cup and a Webflow mug), the MacBook on a patterned runner with a Canon lens cap, the open-plan office and the orange-lit two-monitor desk. They show other people's products, templates, brands or a real person's face, or they would suggest an office or workspace Local Edge does not have. Using them would risk looking like a client or like Local Edge's own work.
+**Missing preview images.** The sandbox could not open the Samanyanga and In Tents sites, so it could not screenshot them. Until the two files exist, those cards show a navy panel with the name and "Open the live concept". To fix: open each live concept at about 1440 px wide, take a screenshot, crop to 3:2 (1440x960), save as WebP and upload it with the exact file name above. The cards pick the images up automatically, with no code change.
 
-**Photo licences.** I do not know where the photographs came from. Before the site is promoted, check that each one is free to use on a business website, and add any credit its licence asks for (for example in the footer or on this page). If a licence does not allow it, delete that file and its `<img>`; the page layouts cope without them.
-
-**Hero photograph.** The brief mentioned a `hero-kariba-business.webp`. It was deliberately not created. I had no photograph I could honestly use, and a stock or generated "Kariba business" picture would imply a client or a place that is not real. The hero uses a supplied landscape photograph as a dark background behind an original illustration labelled as an illustration. If you later take a real photograph (with permission), it can replace the background.
+**Hero photograph.** The brief mentioned a `hero-kariba-business.webp`. It was deliberately not created. I had no photograph I could honestly use, and a stock or generated "Kariba business" picture would imply a client or a place that is not real. The hero uses an original illustration labelled as an illustration instead. If you later take a real photograph (with permission), it can go in the hero.
 
 ---
 
@@ -155,6 +162,38 @@ d. **Prices.** The version 4 brief's prices ($125 / $250 / $350 / $600, care pla
 
 e. **Formspree free plan** (checked October 2026): 50 submissions a month and a 30-day archive. I could not read its privacy policy, so the site makes no detailed privacy claims beyond "delivered through a third-party form service".
 
-f. **Edits made on the live site.** The live site was edited after my version (for example a shorter "Why work with Local Edge" list and different cover art). I could only read it as text from my side, not its files, so this package is built from my own source. Uploading it will replace those edits. If you want to keep any of them, tell me which.
+f. **Samanyanga and In Tents previews**: see section 6.
 
-g. **Samanyanga link.** The concept link uses the repository name as it is spelled in your repository (`smanyanga-resort-prototype`, without the first "a"). It loaded when I checked, so I left it.
+
+## Form handoff behaviour (v4 handoff update)
+
+The demo request, general enquiry and feedback forms use the no-cost WhatsApp/email handoff while their `site-config.js` endpoints are blank. After validation, the page prepares a message and offers:
+- **Send on WhatsApp** — opens a pre-filled message; the visitor must press Send in WhatsApp.
+- **Send by email** — opens a pre-filled email; the visitor must press Send in their email app.
+- **Copy message** — lets the visitor paste the message into another channel.
+
+Nothing is automatically emailed or stored when endpoints are blank. The status copy explicitly says the message is prepared, not sent. If a configured form endpoint fails, the same handoff is shown as a fallback. The same flow applies to all three form types: `demo`, `enquiry`, and `feedback`.
+
+Before publishing, test each form on a phone and desktop:
+1. Submit valid sample details and confirm all entered answers appear in the prepared message.
+2. Check WhatsApp opens with the correct message and correct Local Edge number.
+3. Check the email button opens a draft addressed to the configured Local Edge email.
+4. Confirm the user must manually send and that the page does not claim otherwise.
+5. Test validation errors and the copy-message option.
+
+
+## Version 6 upgrade (24 October 2026)
+
+- Visual refresh: atmospheric SVG background, restrained motion, improved card hover states and responsive portfolio grid. Brand logo and navy/gold identity preserved.
+- Portfolio expanded to eight independent concept links plus the studio site: The Big 5 Lodge, Malachite Tours & Travel, Tino's Guesthouse, Caribbea Bay Resort, Waterfront Lodge, Samanyanga Resort, In Tents Outfitters and VoltEdge Energy. A prior concept is intentionally omitted from public promotion at its owner's request.
+- Portfolio cover art is original illustrative SVG artwork, not captured screenshots and not official brand material. Replace it only with actual screenshots and use appropriate permission for business-owned photography/logos.
+- Added a sourced October 2026 explainer on PHP security vulnerabilities. It distinguishes a vulnerability disclosure from a confirmed breach and links to the PHP project's advisory, OpenAI's coordinated-disclosure post, AP and Reuters. Review time-sensitive security articles periodically.
+- Canonical tags, social URLs, robots.txt and sitemap now reference the current Cloudflare Worker host. Update them again if a custom domain is adopted.
+- Added the new insight to the homepage and Insights listing.
+
+### Before/after publishing checklist
+1. Test all internal pages and image assets at the Worker URL.
+2. Test the mobile navigation and all three form handoffs on a phone. Forms with empty Formspree endpoints prepare a WhatsApp/email message but do not automatically submit or store it.
+3. Check every concept link and ensure the public portfolio is consistent with any business owner's wishes.
+4. Keep the previous ZIP/repository revision as a rollback backup.
+5. The SVG cover illustrations are illustrative previews. Do not describe them as screenshots of the prototypes.
