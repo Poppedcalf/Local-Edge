@@ -724,3 +724,123 @@ a.frame:hover img { transform: scale(1.035); filter: saturate(1.04); }
 @media (max-width:959px) { .hero h1 { max-width:15ch; } .hero-proof { gap:.4rem; } .hero-proof span { font-size:.72rem; } }
 @media (max-width:599px) { .hero-proof span { flex:1 1 auto; justify-content:center; } .portfolio-topline { align-items:flex-start; flex-direction:column; } .portfolio-count { font-size:.8rem; } }
 @media (prefers-reduced-motion: reduce) { .hero::after { animation:none; } .svc-card:hover, .care-card:hover, .work-card:hover, .post-card:hover, .std-grid li:hover, .why-grid li:hover, .project-card:hover { transform:none; } }
+
+
+/* =========================================================
+   LOCAL EDGE V7 — CUSTOMER ACQUISITION & DIGITAL GROWTH LAYER
+   Existing accessible components and behaviours are retained.
+   ========================================================= */
+.hero--growth {
+  background:
+    radial-gradient(circle at 78% 42%, rgba(37, 70, 145, .42), transparent 32rem),
+    linear-gradient(135deg, #050D2A 0%, #09183D 56%, #101F4C 100%);
+  padding-top: clamp(3.5rem, 8vw, 6.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6.8rem);
+}
+.hero--growth::before { opacity: .24; background-size: 1100px auto; }
+.hero--growth::after {
+  content: ""; position: absolute; width: 35rem; height: 35rem; right: -13rem; top: -13rem;
+  border: 1px solid rgba(255,212,49,.12); border-radius: 50%;
+  box-shadow: 0 0 0 3rem rgba(255,255,255,.012), 0 0 0 6rem rgba(255,255,255,.012), 0 0 0 9rem rgba(255,255,255,.012);
+  pointer-events: none;
+}
+.hero--growth .hero-grid { grid-template-columns: minmax(0, 1.02fr) minmax(420px, .98fr); gap: clamp(2.2rem, 5vw, 5rem); }
+.hero--growth h1 { max-width: 14ch; font-size: clamp(2.65rem, 5.5vw, 4.65rem); }
+.hero-eyebrow { margin-bottom: .85rem; color: #D9E2FF; font-size: .69rem; font-weight: 800; letter-spacing: .17em; line-height: 1.6; }
+.hero--growth .hero-sub { max-width: 56ch; color: #CFD7EF; font-size: clamp(1.04rem, 1.9vw, 1.2rem); }
+.hero--growth .loc-badge { color: #FFE275; }
+.hero--growth .hero-proof { gap: .45rem; }
+.hero--growth .hero-proof span { background: rgba(255,255,255,.035); border-color: rgba(255,255,255,.12); }
+.hero-disclaimer { margin-top: 1.15rem; max-width: 60ch; color: #AEB9D9; font-size: .78rem; line-height: 1.5; }
+.growth-board-wrap { position: relative; min-height: 470px; display: grid; place-items: center; isolation: isolate; }
+.growth-orbit { position: absolute; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; pointer-events: none; }
+.growth-orbit--one { width: 480px; height: 480px; }
+.growth-orbit--two { width: 390px; height: 390px; border-style: dashed; opacity: .55; }
+.growth-board { position: relative; z-index: 1; width: min(100%, 470px); padding: 1.25rem; border: 1px solid rgba(255,255,255,.17); border-radius: 22px; background: linear-gradient(155deg, rgba(18,35,80,.96), rgba(7,17,46,.96)); box-shadow: 0 30px 90px rgba(0,0,0,.34); backdrop-filter: blur(18px); transform: rotateY(-5deg) rotateX(2deg); }
+.growth-board-top { display: flex; align-items: center; justify-content: space-between; gap: .7rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+.growth-board-mark { display: flex; gap: 4px; }
+.growth-board-mark i { width: 6px; height: 6px; background: #FFD431; border-radius: 50%; }
+.growth-board-label, .growth-live, .micro-label { font-size: .58rem; font-weight: 800; letter-spacing: .13em; color: #AEB9D9; }
+.growth-live { display: inline-flex; align-items: center; gap: .35rem; color: #B9DCC9; letter-spacing: .08em; }
+.growth-live i, .growth-note-dot { width: 6px; height: 6px; background: #5BD99A; border-radius: 50%; box-shadow: 0 0 0 4px rgba(91,217,154,.1); }
+.growth-board-intro { padding: 1.25rem .1rem 1rem; }
+.growth-board-intro .micro-label { display: block; color: #FFD431; margin-bottom: .5rem; }
+.growth-board-intro strong { display: block; max-width: 24ch; font-size: 1.4rem; line-height: 1.2; letter-spacing: -.03em; color: #fff; }
+.growth-board-intro p { margin-top: .5rem; color: #AEB9D9; font-size: .76rem; line-height: 1.5; }
+.journey-stack { display: grid; gap: 0; }
+.journey-step { display: grid; grid-template-columns: 28px 38px minmax(0,1fr) auto; align-items: center; gap: .6rem; min-height: 63px; padding: .7rem .8rem; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; background: rgba(255,255,255,.045); }
+.journey-step--active { border-color: rgba(255,212,49,.62); background: linear-gradient(90deg, rgba(255,212,49,.13), rgba(255,255,255,.045)); }
+.journey-index { color: #8794BA; font-size: .68rem; font-weight: 800; }
+.journey-icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(255,212,49,.25); border-radius: 10px; color: #FFD431; font-size: 1.15rem; }
+.journey-detail { display: grid; gap: .13rem; }
+.journey-detail b { color: #fff; font-size: .82rem; }
+.journey-detail small { color: #AEB9D9; font-size: .65rem; }
+.journey-state { color: #8C9AC0; font-size: .55rem; letter-spacing: .1em; font-weight: 800; }
+.journey-step--active .journey-state { color: #FFD431; }
+.journey-connector { height: 10px; display: flex; align-items: center; padding-left: 36px; }
+.journey-connector i { height: 10px; border-left: 1px dashed rgba(255,212,49,.45); }
+.growth-board-foot { display: flex; justify-content: space-between; gap: .4rem; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,.1); color: #8390B7; font-size: .55rem; font-weight: 800; letter-spacing: .11em; }
+.growth-note { position: absolute; z-index: 2; display: grid; gap: .16rem; border: 1px solid rgba(255,255,255,.15); border-radius: 12px; padding: .72rem .9rem; color: #fff; background: rgba(15,31,72,.92); box-shadow: 0 12px 30px rgba(0,0,0,.2); backdrop-filter: blur(12px); font-size: .72rem; }
+.growth-note--top { top: 6%; right: -1%; display: flex; align-items: center; gap: .55rem; }
+.growth-note--bottom { bottom: 1%; left: -4%; }
+.growth-note small { color: #AEB9D9; font-size: .64rem; }
+.journey-jobs li { transition: transform .25s, box-shadow .25s, border-color .25s; }
+.journey-jobs li:hover { transform: translateY(-4px); border-color: #C5A52B; box-shadow: var(--shadow); }
+.journey-note { margin-top: 1.8rem; padding: 1.1rem 1.25rem; border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; background: #F4F6FA; color: var(--text-soft); font-size: .9rem; line-height: 1.6; }
+.journey-note strong { color: var(--ink); }
+.growth-services-grid .svc-card { min-height: 320px; padding: 1.55rem; background: linear-gradient(155deg, #112554, #0A1738); transition: transform .25s, border-color .25s, box-shadow .25s; }
+.growth-services-grid .svc-card:hover { transform: translateY(-5px); border-color: rgba(255,212,49,.55); box-shadow: 0 22px 44px rgba(0,0,0,.2); }
+.growth-services-grid .svc-card h3 { max-width: 17ch; font-size: 1.28rem; }
+.growth-services-grid .svc-card .svc-n { min-height: 1.2em; color: #FFE071; }
+.growth-services-grid .svc-card .more { margin-top: auto; }
+.growth-services-grid + .after-grid { color: #CBD3EA; }
+.growth-services-grid + .after-grid a { color: #FFE071; }
+.growth-support { background: #F7F8FC; }
+.growth-offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+.growth-offer { position: relative; display: flex; flex-direction: column; padding: clamp(1.35rem, 3vw, 2rem); background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 28px rgba(11,21,48,.045); scroll-margin-top: 100px; }
+.offer-index { display: inline-grid; place-items: center; width: 2rem; height: 2rem; margin-bottom: 1.1rem; border-radius: 9px; background: var(--navy); color: var(--gold); font-size: .75rem; font-weight: 800; }
+.growth-offer h3 { font-size: 1.25rem; margin-bottom: .45rem; }
+.growth-offer > p { color: var(--text-soft); font-size: .9rem; }
+.growth-offer .list-check { margin-top: .8rem; }
+.growth-offer .list-check li { font-size: .86rem; }
+.growth-offer .offer-note { margin-top: auto; padding-top: 1rem; font-size: .78rem; color: #5E6680; }
+.scope-callout { margin-top: 1.5rem; padding: 1.1rem 1.3rem; background: #FFF8DD; border: 1px solid #EAD47C; border-radius: 12px; color: #66551B; font-size: .88rem; line-height: 1.6; }
+.scope-callout strong { color: #3B321A; }
+.hero--growth .btn-row { gap: .7rem; }
+.hero--growth .btn-ghost { background: rgba(255,255,255,.035); }
+.page-header, .site-header { backdrop-filter: blur(14px); }
+@media (min-width: 760px) {
+  .journey-jobs { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .growth-services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (min-width: 1100px) {
+  .journey-jobs { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .growth-services-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+}
+@media (max-width: 960px) {
+  .hero--growth .hero-grid { grid-template-columns: 1fr; }
+  .hero--growth .hero-copy { max-width: 760px; }
+  .growth-board-wrap { width: min(100%, 620px); margin: .5rem auto 0; }
+  .growth-note--top { right: 2%; }
+  .growth-note--bottom { left: 1%; }
+}
+@media (max-width: 620px) {
+  .hero--growth { padding-top: 2.9rem; }
+  .hero--growth h1 { max-width: 12ch; font-size: clamp(2.35rem, 11vw, 3.5rem); }
+  .hero-eyebrow { max-width: 34ch; font-size: .6rem; }
+  .growth-board-wrap { min-height: 420px; margin-top: 1rem; }
+  .growth-board { padding: .9rem; border-radius: 17px; transform: none; }
+  .growth-board-intro strong { font-size: 1.2rem; }
+  .journey-step { grid-template-columns: 23px 34px minmax(0,1fr) auto; gap: .45rem; padding: .65rem; }
+  .journey-state { font-size: .48rem; }
+  .growth-orbit--one { width: 390px; height: 390px; }
+  .growth-orbit--two { width: 320px; height: 320px; }
+  .growth-note { padding: .58rem .7rem; font-size: .63rem; }
+  .growth-note--top { top: -1%; right: 0; }
+  .growth-note--bottom { bottom: -1%; left: 0; }
+  .growth-offer-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-jobs li, .growth-services-grid .svc-card { transition: none; }
+  .journey-jobs li:hover, .growth-services-grid .svc-card:hover { transform: none; }
+}

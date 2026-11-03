@@ -1,10 +1,18 @@
-# Local Edge website, version 5 — sales-readiness and usability pass
+# Local Edge website, version 7 — customer acquisition positioning
 
-A plain static site: HTML, one stylesheet, one script and one settings file. No build step, no framework. Version 5 tightens the first-impression copy, makes portfolio covers explicit, removes the unfinished-topic list, and fixes a few routing and maintainability issues. The WhatsApp/email handoff remains the no-cost default for all three forms.
+A plain static site: HTML, one stylesheet, one script and one settings file. No build step, no framework. Version 7 repositions Local Edge from a website-design-led studio to a customer-acquisition and digital-growth partner. The original website packages, portfolio concepts, forms, accessibility work and static-site structure are retained. The WhatsApp/email handoff remains the no-cost default for all three forms.
 
 Live address (current): https://local-edge.localedge.workers.dev/
 
-## Version 5 improvements
+## Version 7 transformation
+
+- Homepage now leads with customer acquisition, market understanding, digital experience and practical outreach.
+- Services page adds individually scoped market research, digital presence, lead-generation/outreach and content/campaign support. Existing website package prices remain intact.
+- Contact enquiry choices now include customer acquisition, research, outreach and content support.
+- Main navigation and calls to action are aligned around starting a business conversation.
+- No guaranteed bookings, revenue claims or fabricated client results have been introduced.
+
+The earlier v5/v6 improvements listed below remain part of the project.
 
 - The homepage explains its current tourism, hospitality and service-business focus sooner, while remaining open to other business types.
 - The repeated “why Local Edge” section is shorter and more specific.
@@ -94,9 +102,15 @@ If a page looks unstyled, `styles.css` did not upload completely. Upload it agai
 
 ---
 
-## 5. Honest testing report
+## 5. Testing report
 
-### Checked here, in a local copy (Chromium, simulated phone and desktop widths)
+### Version 7 checks completed for this package
+- All 13 HTML files were parsed and checked for duplicate IDs, missing local image/script/style assets, and broken internal page or anchor links. No issues were found.
+- `script.js` passed `node --check`.
+- The existing form handoff logic, pricing configuration, portfolio filters and other JavaScript were preserved.
+- The updated visual layout was not successfully browser-rendered in this environment, so the refreshed page still needs a real desktop and phone check before deployment.
+
+### Previous version 6 checks (not repeated after the v7 redesign)
 - All 12 pages: every internal link and every `#anchor` resolves, no duplicate ids, every image exists and has width, height and alt text, every normal page has a title, description and canonical address (the noindex 404 page intentionally has no canonical), no leftover template tokens.
 - No horizontal scrolling at 320, 390, 768 and 1440 px wide, on all pages (768 on the main pages).
 - Mobile menu: opens, closes with the button, the Escape key and the dark backdrop. Without JavaScript the links show in the header instead.
